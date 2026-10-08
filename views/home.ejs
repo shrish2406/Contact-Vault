@@ -26,10 +26,11 @@
                       <th scope="col">Actions</th>
                     </tr>
                   </thead>
+                  <% var i = 1; %>
                   <tbody>
                     <% contacts.forEach(contact=> { %>
  <tr>
-                      <td>1</td>
+                      <td><%=  i++%></td>
                       <td><%= contact.FirstName %></td>
                       <td> <%= contact.LastName %></td>
                       <td><%= contact.email %></td>
