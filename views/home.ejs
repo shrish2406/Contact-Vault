@@ -27,66 +27,23 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <% contacts.forEach(contact=> { %>
+ <tr>
                       <td>1</td>
-                      <td>Alfred</td>
-                      <td>Kuhlman</td>
-                      <td>alfred@test.com</td>
-                      <td>98989898</td>
+                      <td><%= contact.FirstName %></td>
+                      <td> <%= contact.LastName %></td>
+                      <td><%= contact.email %></td>
+                      <td><%= contact.phone %></td>
+                   
                       <td width="150">
-                        <a href="/show-contact" class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
-                        <a href="/update-contact" class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
+                         <a href="/show-contact/<%= contact.id %>"  class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
+                        <a href="/update-contact/<%= contact.id %>"  class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
+                        <a href="/delete-contact<%= contact.id %>" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Frederick</td>
-                      <td>Jerde</td>
-                      <td>frederick@test.com</td>
-                      <td>54545454</td>
-                      <td>
-                        <a href="show.html" class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
-                        <a href="form.html" class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Joannie</td>
-                      <td>McLaughlin</td>
-                      <td>joannie@test.com</td>
-                      <td>75757575</td>
-                      <td>
-                        <a href="show.html" class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
-                        <a href="form.html" class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Odie</td>
-                      <td>Koss</td>
-                      <td>odie@test.com</td>
-                      <td>64646464</td>
-                      <td>
-                        <a href="show.html" class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
-                        <a href="form.html" class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Edna</td>
-                      <td>Ondricka</td>
-                      <td>edna@test.com</td>
-                      <td>58595858</td>
-                      <td>
-                        <a href="show.html" class="btn-outline-info btn btn-sm btn-circle" title="Show"><i class="fa fa-eye"></i></a>
-                        <a href="form.html" class="btn-outline-secondary btn btn-sm btn-circle" title="Edit"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn-outline-danger btn btn-sm btn-circle" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
-                      </td>
-                    </tr>
+
+                 <%  });%>
+                   
                   </tbody>
                 </table> 
               </div>
